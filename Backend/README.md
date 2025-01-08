@@ -28,7 +28,7 @@ Before you begin, ensure you have the following installed:
 
 1. **Clone the Repository**:
    ```bash
-   git clone <repository-url>
+   git clone repository-url
    cd ProjectAlign/Backend
 2. **Create and Activate a Virtual Environment**:
     ```bash
@@ -54,16 +54,16 @@ Before you begin, ensure you have the following installed:
 
 ### Projects 
 - GET /projects/list: List all projects for a user.
-- GET /projects/<id>/details: View all project details.
+- GET /projects/project_id/details: View all project details.
 - POST /projects/create/: Create a new project.
-- PUT /projects/<id>/update/: Update an existing project.
-- DELETE /projects/<id>/delete/: Delete a project.
+- PUT /projects/project_id/update/: Update an existing project.
+- DELETE /projects/project_id/delete/: Delete a project.
 
 ### Tasks
 - GET /tasks/list: List all tasks for a user.
-- GET /tasks/<project_id>/list: List all tasks for a specific project.
+- GET /tasks/project_id/list: List all tasks for a specific project.
 - POST /tasks/create/: Create a new task.
-- PUT /tasks/<id>/update/: Update an existing task.
-- PUT /tasks/<id>/update-status/: Update the status of an existing task.
-- DELETE /tasks/<id>/delete/: Delete a task.
+- PUT /tasks/task_id/update/: Update an existing task.
+- PUT /tasks/task_id/update-status/: Update the status of an existing task.
+- DELETE /tasks/task_id/delete/: Delete a task.
 
