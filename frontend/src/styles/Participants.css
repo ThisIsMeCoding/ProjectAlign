@@ -1,0 +1,45 @@
+.participants-section {
+    flex: 1;
+    background: #0033a0;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-y: auto;
+    flex-direction: column;
+    display: flex;
+  }
+  
+  .participants-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+  }
+  
+  .participants-list {
+    list-style: none;
+    padding: 0;
+    overflow-y: auto;
+  }
+  
+  .participant {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .participant-icon {
+    width: 30px;
+    height: 30px;
+    color: white;
+    flex-shrink: 0;
+  }
+  
+  .add-participants-button {
+    background-color: white;
+    color: #0033a0;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  

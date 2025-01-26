@@ -1,0 +1,82 @@
+.my-tasks {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .my-tasks h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #0033a0;
+  }
+  
+  .sidebar {
+    flex: 0 0 250px; 
+    background-color: #0033a0;
+    color: white;
+    height: 100%;
+    position: fixed; 
+    overflow: hidden;
+  }
+
+  .kanban-board {
+    margin-left: 150px; 
+    flex:1;
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    height: 100vh;
+  }
+  
+  .kanban-column {
+    flex: 1;
+    background: white;
+    border-radius: 8px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+  }
+  
+  .kanban-column h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #0033a0;
+    margin-bottom: 10px;
+  }
+  
+  .kanban-task {
+    background: #fff;
+    border-radius: 8px;
+    border: 2px solid #00c853; /* Default: Green border */
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .kanban-task:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .kanban-task h3 {
+    margin: 0 0 10px;
+  }
+  
+  .kanban-task p {
+    margin: 5px 0;
+  }
+
+  
+  /* Task styles based on column */
+  .toDo-task {
+    border: 2px solid #ff5252; /* Red for To Do */
+  }
+  
+  .ongoing-task {
+    border: 2px solid #ffeb3b; /* Yellow for In Progress */
+  }
+  
+  .done-task {
+    border: 2px solid #00c853; /* Green for Done */
+  }
+  
+  

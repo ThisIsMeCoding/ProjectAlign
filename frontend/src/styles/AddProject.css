@@ -1,0 +1,126 @@
+.add-project-page {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .add-project-form-container {
+    flex: 1;
+    margin-left: 250px; /* Space for sidebar */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background: white;
+  }
+  .add-project-form-container h1 {
+    font-size: 1.8rem;
+    color: #0033a0;
+    margin-bottom: 20px;
+  }
+  
+  .add-project-form {
+    width: 100%;
+    max-width: 1300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .add-project-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  .add-project-form input {
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  /* Participants Section */
+  .participants-input {
+    display: flex;
+    gap: 10px;
+    align-items: center; 
+    margin-top: 10px;
+  }
+
+  .participants-input input {
+    flex: 1; /* Allow the input field to grow */
+    font-size: 1rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    height: 40px; /* Ensure consistent height with button */
+  }
+  
+  .participants-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+  }
+  
+  .participants-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+  }
+  
+  .add-participant-button {
+    font-size: 1.2rem; /* Adjust font size for better visibility */
+    background-color: #0033a0;
+    color: white;
+    border: none;
+    padding: 0; /* Remove extra padding */
+    width: 40px; /* Match input height */
+    height: 40px; /* Set consistent height */
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the "+" inside the button */
+    cursor: pointer;
+  }
+  
+  
+  .add-participant-button:hover {
+    background-color: #002080;
+  }
+  
+  /* Buttons */
+  .form-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .save-button {
+    background-color: #0033a0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .cancel-button {
+    background-color: #aaa;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .save-button:hover {
+    background-color: #002080;
+  }
+  
+  .cancel-button:hover {
+    background-color: #888;
+  }
+  

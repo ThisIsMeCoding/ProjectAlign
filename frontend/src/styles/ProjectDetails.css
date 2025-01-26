@@ -1,0 +1,33 @@
+.project-details {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .project-details-content {
+    flex: 1;
+    margin-left: 250px; /* Space for sidebar */
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    overflow: hidden; /* Prevent horizontal overflow */
+  }
+
+  .sidebar {
+    flex: 0 0 250px; 
+    background-color: #0033a0;
+    color: white;
+    height: 100%;
+    position: fixed; 
+    overflow: hidden;
+  }
+
+  .details-sections {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    flex-direction: column;
+  }
+  
+  
+ 
+  
