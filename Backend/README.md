@@ -34,14 +34,11 @@ Before you begin, ensure you have the following installed:
     ```bash
     python -m venv venv
     source venv/bin/activate  # On Windows use: venv\Scripts\activate
-3. **Install Dependencies**:
-    ```bash
-    pip install -r requirements.txt
-4. **Run Migrations**:
+5. **Run Migrations**:
     ```bash
     python manage.py makemigrations
     python manage.py migrate
-5. **Run the Development Server**:
+6. **Run the Development Server**:
     ```bash
     python manage.py runserver
 

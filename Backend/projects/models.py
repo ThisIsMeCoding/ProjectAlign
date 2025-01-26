@@ -21,3 +21,9 @@ class Project(models.Model):
             return 0
         completed_tasks=self.tasks.filter(status="done").count()
         return int((completed_tasks/total_tasks)*100)
+
+class Invitation(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name="invitations")
+    email = models.EmailField()
+    is_accepted = models.BooleanField(null=True)  # True for accepted, False for declined, None for pending
+    token = models.CharField(max_length=255, unique=True)

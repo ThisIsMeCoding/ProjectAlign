@@ -23,6 +23,11 @@ def create_task(request):
         return Response({"error": "Only the project owner can create tasks"}, status=status.HTTP_403_FORBIDDEN)
 
     assigned_to = CustomUser.objects.filter(username=assigned_to_username).first()
+    if not assigned_to or assigned_to not in project.participants.all():
+        return Response(
+            {"error": f"{assigned_to_username} is not a participant in the project"},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
 
     task = Task.objects.create(
         title=title,

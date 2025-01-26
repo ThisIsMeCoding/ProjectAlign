@@ -105,7 +105,7 @@ ROOT_URLCONF = 'ProjectAlign.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -184,4 +184,13 @@ SIMPLE_JWT = {
 
 # CORS Settings
 CORS_ALLOW_ALL_ORIGINS = True
+
+# Email settings
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "projectalign75@gmail.com"  # Your email
+EMAIL_HOST_PASSWORD = "yoadowagaovydeen"  # App-specific password or your email password
+DEFAULT_FROM_EMAIL = "projectalign75@gmail.com"  # Your "from" email
 
