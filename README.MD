@@ -14,8 +14,7 @@ ProjectAlign is a web application designed to help students collaborate effectiv
 - **Axios**: API communication with the backend.  
 
 ### Database  
-- **SQLite** (Development): Lightweight and easy-to-use for local testing.  
-- **PostgreSQL** (Production): Scalable and robust database for hosting.  
+- **SQLite** (Development): Lightweight and easy-to-use for local testing.    
 
 ## System Architecture  
 ProjectAlign is built on a modular, three-layered architecture:  
