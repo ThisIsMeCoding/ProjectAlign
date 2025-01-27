@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/Tasks.css";
 
-const Tasks = ({ tasks, projectId, projectName }) => {
+const Tasks = ({ tasks, projectId, projectName, isOwner }) => {
   const navigate = useNavigate();
 
   const handleAddTask = () => {
@@ -25,7 +25,14 @@ const Tasks = ({ tasks, projectId, projectName }) => {
           </div>
         ))}
       </div>
-      <button className="add-task-button" onClick={handleAddTask}>
+      <button 
+      className="add-task-button" 
+      onClick={handleAddTask}
+      disabled={!isOwner}
+      style={{
+        cursor: !isOwner ? "not-allowed" : "pointer",
+        opacity: !isOwner ? 0.6 : 1,
+      }}>
         ADD TASK
       </button>
     </div>

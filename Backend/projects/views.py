@@ -7,6 +7,8 @@ from rest_framework.permissions import IsAuthenticated
 import json
 import uuid
 from django.core.mail import send_mail
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 # Create project
 @api_view(["POST"])
@@ -65,6 +67,43 @@ def update_project(request, project_id):
     project.description = data.get("description", project.description)
     project.due_date = data.get("due_date", project.due_date)
     project.save()
+
+    participants = data.get("participants", [])
+    # Add participants to the project
+    participants = data.get("participants", [])
+    for participant_email in participants:
+            try:
+                # Validate email format
+                validate_email(participant_email)
+
+                # Check for existing invitations and avoid duplicates
+                if not Invitation.objects.filter(project=project, email=participant_email).exists():
+                    # Generate a unique token for the invitation
+                    token = str(uuid.uuid4())
+                    Invitation.objects.create(project=project, email=participant_email, token=token)
+
+                    # Email content
+                    subject = "You’ve been invited to join a project!"
+                    message = f"""
+                    Hi,
+
+                    You’ve been invited to join the project "{project.title}" on ProjectAlign.
+
+                    Click the link below to accept the invitation:
+                    http://127.0.0.1:8000/projects/invitations/accept/{token}/
+
+                    If you don’t want to join, you can ignore this email.
+
+                    Regards,
+                    ProjectAlign Team
+                    """
+                    # Send the invitation email
+                    send_mail(subject, message, "projectalign75@gmail.com", [participant_email])
+
+            except ValidationError:
+                # Ignore invalid emails and proceed with others
+                continue
+
     return JsonResponse({"message": "Project updated successfully"})
 
 
@@ -98,6 +137,7 @@ def project_details(request, project_id):
         return JsonResponse({"error": "You don't have access to this project"}, status=403)
     
     participants = [project.project_owner.username] + [p.username for p in project.participants.all()]
+    isOwner = request.user == project.project_owner
 
     data = {
         "id": project.id,
@@ -106,7 +146,8 @@ def project_details(request, project_id):
         "dueDate": project.due_date,
         "description":project.description,
         "progress": project.progress,
-        "participants": participants
+        "participants": participants,
+        "isOwner": isOwner
     }
     return JsonResponse(data, status=200)
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa"; // Importing the user icon
 import "../styles/Participants.css";
 
-const Participants = ({ participants, projectId, projectName }) => {
+const Participants = ({ participants, projectId, projectName, isOwner }) => {
   const navigate = useNavigate(); 
 
   const handleAddParticipants = () => {
@@ -20,7 +20,14 @@ const Participants = ({ participants, projectId, projectName }) => {
           </li>
         ))}
       </ul>
-      <button className="add-participants-button" onClick={handleAddParticipants}>ADD PARTICIPANTS</button>
+      <button 
+      className="add-participants-button" 
+      onClick={handleAddParticipants}
+      disabled={!isOwner}
+      style={{
+        cursor: !isOwner ? "not-allowed" : "pointer",
+        opacity: !isOwner ? 0.6 : 1,
+      }}>ADD PARTICIPANTS</button>
     </div>
   );
 };

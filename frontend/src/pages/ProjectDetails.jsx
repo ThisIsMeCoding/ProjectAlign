@@ -55,8 +55,8 @@ const ProjectDetails = () => {
       <div className="project-details-content">
         <ProjectInfo project={project} />
         <div className="details-sections">
-          <Participants participants={participants} projectId={project.id} projectName={project.name} />
-          <Tasks tasks={tasks} projectId={project.id} projectName={project.name} />
+          <Participants participants={participants} projectId={project.id} projectName={project.name} isOwner={project.isOwner} />
+          <Tasks tasks={tasks} projectId={project.id} projectName={project.name} isOwner={project.isOwner}/>
         </div>
       </div>
     </div>
